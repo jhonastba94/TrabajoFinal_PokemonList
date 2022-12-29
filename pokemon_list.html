@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/icon.png" />
+    <link rel="stylesheet" type="text/css" href="styles/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/loginValidator.js"></script>
+    <title>pokemones la lista de la primera generacion</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/pokemonlista.css">
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="img/logo/logo.png" alt="Logo de la marca" />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a class="headerLink" href="/profile.html">Profile</a></li>
+          <li><a class="headerLink" href="/pokemon_list.html">Pokemon List</a></li>
+          <li><a class="headerLink" href="/pokemon_favoritos.html">Pokemon Favorites</a></li>
+        </ul>
+      </nav>
+      <a class="btn">
+        <button class="headerLink" onclick="logout()">Salir</button>
+      </a>
+    </header>
+    <main>
+      <select
+        id="select_lista_pokemones"
+        class="form-select m-3 w-75 bg-secondary text-light border-primary border-3 title2 text-start"
+      ></select>
+      <div class="contenedor position-relative" id="contenedor">
+        <div class="position-absolute contenedor-pokedex">
+          <div class="pokedex"></div>
+        </div>
+        <span
+          id="span"
+          class="fs-1 text-uppercase background px-3 letra-color title1"
+          >abra</span
+        >
+        <img
+          id="imagen"
+          class="imagen"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/63.png"
+          alt="abra"
+        />
+
+        <button
+          id="esconder"
+          class="btn-primary px-3"
+          style="display: none"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Agregar a favoritos
+        </button>
+        <p
+          id="favoritos"
+          class="text-light mt-3 letra-favoritos title2 px-3"
+          style="display: none"
+        >
+          Pokemon agregado a favoritos!!!
+        </p>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¿Quieres agregarlo a tus favoritos?
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="background: rgb(245, 54, 54)"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="background: rgb(36, 104, 36); background-color: green"
+              id="btnAgregar"
+              data-bs-dismiss="modal"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert modal -->
+    <div
+      class="modal fade"
+      id="alertModal"
+      tabindex="-1"
+      aria-labelledby="alertModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="alertModalLabel">
+              ¡Ya tienes este pokemon en tus favoritos!
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="background: rgb(245, 54, 54)"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./js/pokemonlista.js"></script>
